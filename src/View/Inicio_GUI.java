@@ -7,7 +7,6 @@ package View;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -30,240 +29,18 @@ public class Inicio_GUI extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
-        entityManager = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("aprender?zeroDateTimeBehavior=convertToNullPU").createEntityManager();
-        clienteQuery = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT c FROM Cliente c");
-        clienteList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : clienteQuery.getResultList();
-        jTabbedPane3 = new javax.swing.JTabbedPane();
-        Relatorio = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        tel_txt = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        nome_txt = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        email_txt = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        cadastro_BTN = new javax.swing.JButton();
-        sair_BTN = new javax.swing.JButton();
-        jTabbedPane2 = new javax.swing.JTabbedPane();
-        jTabbedPane4 = new javax.swing.JTabbedPane();
-        jPanel2 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jLabel5 = new javax.swing.JLabel();
-        cod2_txt = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        nome2_txt = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        email2_txt = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        tel2_txt = new javax.swing.JTextField();
-        consultar_BTN = new javax.swing.JButton();
-        alterar_BTN = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        cod3_txt = new javax.swing.JTextField();
-        excluir_BTN = new javax.swing.JButton();
-        jToolBar1 = new javax.swing.JToolBar();
-        jPanel4 = new javax.swing.JPanel();
-        ticket_BTN = new javax.swing.JButton();
+        PAINEL = new javax.swing.JPanel();
         atestado_BTN = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        declaração_BNT = new javax.swing.JButton();
+        comparecimento_BTN = new javax.swing.JButton();
+        sair_BTN = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(204, 204, 255));
         setUndecorated(true);
 
-        jPanel1.setLayout(null);
-
-        jLabel1.setText("NOME:");
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(19, 54, 50, 14);
-
-        tel_txt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tel_txtActionPerformed(evt);
-            }
-        });
-        jPanel1.add(tel_txt);
-        tel_txt.setBounds(80, 110, 306, 20);
-
-        jLabel2.setText("TELEFONE:");
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(20, 110, 60, 14);
-        jPanel1.add(nome_txt);
-        nome_txt.setBounds(79, 51, 306, 20);
-
-        jLabel3.setText("EMAIL:");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(20, 82, 50, 14);
-
-        email_txt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                email_txtActionPerformed(evt);
-            }
-        });
-        jPanel1.add(email_txt);
-        email_txt.setBounds(80, 80, 306, 20);
-
-        jLabel4.setText("AGENDA");
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(170, 20, 50, 14);
-
-        cadastro_BTN.setText("CADASTRAR");
-        cadastro_BTN.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cadastro_BTNActionPerformed(evt);
-            }
-        });
-        jPanel1.add(cadastro_BTN);
-        cadastro_BTN.setBounds(60, 230, 110, 23);
-
-        sair_BTN.setText("SAIR");
-        sair_BTN.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sair_BTNActionPerformed(evt);
-            }
-        });
-        jPanel1.add(sair_BTN);
-        sair_BTN.setBounds(240, 230, 80, 23);
-        jPanel1.add(jTabbedPane2);
-        jTabbedPane2.setBounds(150, 40, 5, 5);
-        jPanel1.add(jTabbedPane4);
-        jTabbedPane4.setBounds(180, -30, 40, 5);
-
-        Relatorio.addTab("Cadastrar", jPanel1);
-
-        org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, clienteList, jTable1);
-        org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${cliCod}"));
-        columnBinding.setColumnName("Codigo");
-        columnBinding.setColumnClass(Integer.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${cliNome}"));
-        columnBinding.setColumnName("Nome");
-        columnBinding.setColumnClass(String.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${cliEmail}"));
-        columnBinding.setColumnName("Email");
-        columnBinding.setColumnClass(String.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${cliTel}"));
-        columnBinding.setColumnName("Telefone ");
-        columnBinding.setColumnClass(Long.class);
-        bindingGroup.addBinding(jTableBinding);
-        jTableBinding.bind();
-        jScrollPane1.setViewportView(jTable1);
-
-        jLabel5.setText("Código:");
-
-        jLabel6.setText("Nome:");
-
-        nome2_txt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nome2_txtActionPerformed(evt);
-            }
-        });
-
-        jLabel7.setText("Email:");
-
-        jLabel8.setText("Telefone:");
-
-        consultar_BTN.setText("Consultar");
-        consultar_BTN.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                consultar_BTNActionPerformed(evt);
-            }
-        });
-
-        alterar_BTN.setText("alterar");
-        alterar_BTN.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                alterar_BTNActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 395, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE))
-                        .addComponent(jLabel7)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(cod2_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(email2_txt, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
-                    .addComponent(nome2_txt)
-                    .addComponent(tel2_txt))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(consultar_BTN)
-                    .addComponent(alterar_BTN))
-                .addContainerGap())
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cod2_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(consultar_BTN))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nome2_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(alterar_BTN))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(email2_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tel2_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 42, Short.MAX_VALUE))
-        );
-
-        Relatorio.addTab("Consultra/Alterar", jPanel2);
-
-        jPanel3.setLayout(null);
-
-        jLabel9.setText("codigo");
-        jPanel3.add(jLabel9);
-        jLabel9.setBounds(174, 55, 46, 14);
-        jPanel3.add(cod3_txt);
-        cod3_txt.setBounds(159, 75, 70, 20);
-
-        excluir_BTN.setText("excluir");
-        excluir_BTN.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                excluir_BTNActionPerformed(evt);
-            }
-        });
-        jPanel3.add(excluir_BTN);
-        excluir_BTN.setBounds(156, 106, 83, 23);
-
-        Relatorio.addTab("Excluir", jPanel3);
-
-        jToolBar1.setRollover(true);
-
-        jPanel4.setLayout(null);
-
-        ticket_BTN.setText("TICKET");
-        ticket_BTN.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ticket_BTNActionPerformed(evt);
-            }
-        });
-        jPanel4.add(ticket_BTN);
-        ticket_BTN.setBounds(30, 70, 310, 23);
+        PAINEL.setLayout(null);
 
         atestado_BTN.setText("ATESTADO");
         atestado_BTN.addActionListener(new java.awt.event.ActionListener() {
@@ -271,84 +48,78 @@ public class Inicio_GUI extends javax.swing.JFrame {
                 atestado_BTNActionPerformed(evt);
             }
         });
-        jPanel4.add(atestado_BTN);
-        atestado_BTN.setBounds(30, 130, 310, 23);
+        PAINEL.add(atestado_BTN);
+        atestado_BTN.setBounds(100, 40, 180, 23);
 
-        jButton3.setText("REATÓRIO");
-        jPanel4.add(jButton3);
-        jButton3.setBounds(30, 190, 310, 23);
+        declaração_BNT.setText("DECLARAÇÃO");
+        declaração_BNT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                declaração_BNTActionPerformed(evt);
+            }
+        });
+        PAINEL.add(declaração_BNT);
+        declaração_BNT.setBounds(102, 149, 180, 23);
 
-        jToolBar1.add(jPanel4);
+        comparecimento_BTN.setText("COMPARECIMENTO");
+        comparecimento_BTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comparecimento_BTNActionPerformed(evt);
+            }
+        });
+        PAINEL.add(comparecimento_BTN);
+        comparecimento_BTN.setBounds(101, 255, 190, 23);
 
-        Relatorio.addTab("Relatorio", jToolBar1);
+        sair_BTN.setText("X");
+        sair_BTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sair_BTNActionPerformed(evt);
+            }
+        });
+        PAINEL.add(sair_BTN);
+        sair_BTN.setBounds(323, 0, 80, 23);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Relatorio)
+            .addComponent(PAINEL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Relatorio)
+            .addComponent(PAINEL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        bindingGroup.bind();
-
-        setSize(new java.awt.Dimension(400, 300));
+        setSize(new java.awt.Dimension(400, 308));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tel_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tel_txtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tel_txtActionPerformed
-
-    private void email_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_email_txtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_email_txtActionPerformed
-
-    private void sair_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sair_BTNActionPerformed
-    System.exit(0);
-    }//GEN-LAST:event_sair_BTNActionPerformed
-
-    private void cadastro_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastro_BTNActionPerformed
-     Controller.Funcoes_DAO.cadastrar();
-    }//GEN-LAST:event_cadastro_BTNActionPerformed
-
-    private void nome2_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nome2_txtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nome2_txtActionPerformed
-
-    private void consultar_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultar_BTNActionPerformed
-    Controller.Funcoes_DAO.consultar();
-    }//GEN-LAST:event_consultar_BTNActionPerformed
-
-    private void alterar_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alterar_BTNActionPerformed
-   Controller.Funcoes_DAO.alterar();
-    }//GEN-LAST:event_alterar_BTNActionPerformed
-
-    private void excluir_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluir_BTNActionPerformed
-    
-   String x = JOptionPane.showInputDialog(null, "Deseja apagar registro\n1 sim \n2 não");
-   int op = Integer.parseInt(x);
-   if(op==1){
-       Controller.Funcoes_DAO.excluir();
-   }else{
-   JOptionPane.showMessageDialog(null, "exclusão cancelada!!");
-   }
-    }//GEN-LAST:event_excluir_BTNActionPerformed
-
     private void atestado_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atestado_BTNActionPerformed
         try {
-            Controller.Press_DAO.imprime();
+            Controller.atestado_DAO.Impressão();
         } catch (Exception ex) {
             Logger.getLogger(Inicio_GUI.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_atestado_BTNActionPerformed
 
-    private void ticket_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ticket_BTNActionPerformed
-    Controller.Ticket_DAO.impressao();
-    }//GEN-LAST:event_ticket_BTNActionPerformed
+    private void declaração_BNTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_declaração_BNTActionPerformed
+        try {
+            Controller.declaração_DAO.Impressão2();
+        } catch (Exception ex) {
+            Logger.getLogger(Inicio_GUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_declaração_BNTActionPerformed
+
+    private void comparecimento_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comparecimento_BTNActionPerformed
+        try {
+            Controller.comparecimento_DAO.Impressão3();
+        } catch (Exception ex) {
+            Logger.getLogger(Inicio_GUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_comparecimento_BTNActionPerformed
+
+    private void sair_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sair_BTNActionPerformed
+    System.exit(0);
+    }//GEN-LAST:event_sair_BTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -386,45 +157,10 @@ public class Inicio_GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTabbedPane Relatorio;
-    private javax.swing.JButton alterar_BTN;
+    private javax.swing.JPanel PAINEL;
     private javax.swing.JButton atestado_BTN;
-    private javax.swing.JButton cadastro_BTN;
-    private java.util.List<View.Cliente> clienteList;
-    private javax.persistence.Query clienteQuery;
-    public static javax.swing.JTextField cod2_txt;
-    public static javax.swing.JTextField cod3_txt;
-    private javax.swing.JButton consultar_BTN;
-    public static javax.swing.JTextField email2_txt;
-    public static javax.swing.JTextField email_txt;
-    private javax.persistence.EntityManager entityManager;
-    private javax.swing.JButton excluir_BTN;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTabbedPane jTabbedPane3;
-    private javax.swing.JTabbedPane jTabbedPane4;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JToolBar jToolBar1;
-    public static javax.swing.JTextField nome2_txt;
-    public static javax.swing.JTextField nome_txt;
+    private javax.swing.JButton comparecimento_BTN;
+    private javax.swing.JButton declaração_BNT;
     private javax.swing.JButton sair_BTN;
-    public static javax.swing.JTextField tel2_txt;
-    public static javax.swing.JTextField tel_txt;
-    public static javax.swing.JButton ticket_BTN;
-    private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 }
